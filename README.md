@@ -57,11 +57,11 @@ printing the statistics of Kaggle repositories:
 - Total and median number of source code lines per programming language used.    
  
 
-**Example printed statistics:**  
+**Example Output/ printing statistics:**  
  
 ![Exampleoutput](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/4503fd12-1f5e-4010-8d1c-852067d85300)    
 
-**showing plots**
+**Example Output/ showing plots:**
 - Showing the number of stats(commits, stars, contributors, branches, tags, forks, releases, closed issues, and environments) per repository in line chart   
 
 ![commits](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/b25fc31d-c078-498e-b5c0-6b3e9d87383c)
