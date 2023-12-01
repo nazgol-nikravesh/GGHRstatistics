@@ -10,8 +10,7 @@ This function acts as your personal GitHub investigator, exploring the repositor
 - username => here is "Kaggle"   
 - token => my Git-Hub toke (Ensure you have a valid GitHub token with the necessary permissions.)   
 
-**Output:**![Uploading commits.png…]()
-![closed_issues](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/9160c1ed-089e-42bc-b00a-4fbf29933a7f)
+**Output:**
 
 statistics of Kaggle repositories:  
 - Number of commits, stars, contributors, branches, tags, forks, releases, closed issues, and environments per repository.   
@@ -65,6 +64,8 @@ printing the statistics of Kaggle repositories:
 **showing plots**
 - Showing the number of stats(commits, stars, contributors, branches, tags, forks, releases, closed issues, and environments) per repository in line chart   
 
+![Uploading commits.png…]()
+![closed_issues](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/9160c1ed-089e-42bc-b00a-4fbf29933a7f)
 ![branches](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/888451da-9b41-4b76-be6d-0b46e4190ba5)
 ![tags](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/ebf077b9-f920-4752-82a7-d253e0329c8c)
 ![stars](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/1f3839a2-5f05-4d40-82bf-a36f8609bc61)
