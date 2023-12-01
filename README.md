@@ -41,7 +41,7 @@ statistics of Kaggle repositories:
   - The response from this endpoint contains data on the lines of code written in each programming language present in the repository.    
   - The script iterates through the languages obtained and accumulates the lines of code per language, providing a comprehensive overview of the project's multilingual composition.
 
-
+---------------------------------------------------------------------------------------------------------------------------------------
 ### 2.show_stats(stats, repos) 
 
 
