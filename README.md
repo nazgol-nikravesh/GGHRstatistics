@@ -74,6 +74,10 @@ printing the statistics of Kaggle repositories:
 ![closed_issues](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/602c0af0-850e-428c-b9ac-1e2830aea86c)
 ![contributers](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/211b5f57-024f-4a74-810f-6c25449c1dff)
 
+--------------------------------------
+
+ **note: run main-GGHRS.py to get the outputs.**  
+
 
 ## Dependencies (Python libraries)
 - statistics
