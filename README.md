@@ -34,8 +34,8 @@ statistics of Kaggle repositories:
 - Fetching commits, contributors, branches, tags, forks, releases, closed issues, and deployements:
   The script retrieves deployments for a repository using the /repos/{username}/{repo_name}/deployments endpoint. It then extracts unique environments from deployments to count the number of deployments, providing insights into how the repository is deployed in different environments.
 - Fetching environments:
-  The number of environments a repository has is determined by counting the unique environments from deployments. Based on my search, there is no way to fetch the number of environments directly without deployments.
-  **note: There are no environments available for Kaggle's GitHub repositories.**
+  The number of environments a repository has is determined by counting the unique environments from deployments. Based on my search, there is no way to fetch the number of environments directly without deployments.    
+  **note: There are no environments available for Kaggle's GitHub repositories.**   
 - Fetching programming languages code lines:    
   - The /repos/{username}/{repo_name}/languages endpoint is employed to gather language statistics for a specific repository.   
   - The response from this endpoint contains data on the lines of code written in each programming language present in the repository.    
