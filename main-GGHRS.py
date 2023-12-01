@@ -27,8 +27,18 @@ def Get_GitHub_Repository_statistics(username, token):
         print("Something went wrong!", err)
         return None
 
-    # print('reps:', repositories)
-
+    skipped_rep={
+        'commits': [],
+        'stars': [],
+        'contributors': [],
+        'branches': [],
+        'tags': [],
+        'forks': [],
+        'releases': [],
+        'closed_issues': [],
+        'deployments': [],
+        'languages': {}
+    }
     stats = {
         'commits': [],
         'stars': [],
@@ -49,7 +59,7 @@ def Get_GitHub_Repository_statistics(username, token):
 
     for repo in repositories:
         repo_name = repo.get('name')
-        # print('**repoName:', repo_name)
+
         if repo_name:
 
             for fetch_stat in with_url:
@@ -65,8 +75,9 @@ def Get_GitHub_Repository_statistics(username, token):
                     if fetch_stat == 'deployments':
                         # Extracting environments from deployments
                         deployments = response.json()
-                        environments = set(deployments['environment'] for deployment in deployments)
+                        environments = set(deployment['environment'] for deployment in deployments)
                         stats['deployments'].append(len(environments))
+
                     else:
                         stats[fetch_stat].append(len(response.json()))  # Counting the number of fetch stats
                 except requests.exceptions.HTTPError as errh:
@@ -74,12 +85,16 @@ def Get_GitHub_Repository_statistics(username, token):
                         print(f"Skipped repository {repo_name} due to conflict.")
                     else:
                         print("HTTP Error:", errh)
+                    skipped_rep[fetch_stat].append(repo_name)
                 except requests.exceptions.ConnectionError as errc:
                     print("Error Connecting:", errc)
+                    skipped_rep[fetch_stat].append(repo_name)
                 except requests.exceptions.Timeout as errt:
                     print("Timeout Error:", errt)
+                    skipped_rep[fetch_stat].append(repo_name)
                 except requests.exceptions.RequestException as err:
                     print("Something went wrong!", err)
+                    skipped_rep[fetch_stat].append(repo_name)
 
             repo_info_url = f'https://api.github.com/repos/{username}/{repo_name}'
             repo_info_response = requests.get(repo_info_url, headers=headers)
@@ -93,12 +108,16 @@ def Get_GitHub_Repository_statistics(username, token):
 
             except requests.exceptions.HTTPError as errh:
                 print("HTTP Error:", errh)
+                skipped_rep[fetch_stat].append(repo_name)
             except requests.exceptions.ConnectionError as errc:
                 print("Error Connecting:", errc)
+                skipped_rep[fetch_stat].append(repo_name)
             except requests.exceptions.Timeout as errt:
                 print("Timeout Error:", errt)
+                skipped_rep[fetch_stat].append(repo_name)
             except requests.exceptions.RequestException as err:
                 print("Something went wrong!!!", err)
+                skipped_rep[fetch_stat].append(repo_name)
 
             # Fetching language statistics for each repository
             languages_url = f'https://api.github.com/repos/{username}/{repo_name}/languages'
@@ -107,20 +126,25 @@ def Get_GitHub_Repository_statistics(username, token):
             try:
                 languages_response.raise_for_status()
                 languages_data = languages_response.json()
+
                 for lang, lines in languages_data.items():
                     stats['languages'].setdefault(lang, []).append(lines)
             except requests.exceptions.HTTPError as errh:
                 print("HTTP Error:", errh)
+                skipped_rep[fetch_stat].append(repo_name)
             except requests.exceptions.ConnectionError as errc:
                 print("Error Connecting:", errc)
+                skipped_rep[fetch_stat].append(repo_name)
             except requests.exceptions.Timeout as errt:
                 print("Timeout Error:", errt)
+                skipped_rep[fetch_stat].append(repo_name)
             except requests.exceptions.RequestException as err:
                 print("Something went wrong!!!!", err)
-    return stats
+                skipped_rep[fetch_stat].append(repo_name)
+    return stats, repositories, skipped_rep
 
 
-def show_stats(stats):
+def show_stats(stats,repos,skip):
     print('\n')
     print("\033[94mStatistics for Kaggle repositories:\033[0m")
     print('\033[95m------------------------------\033[0m')
@@ -151,37 +175,55 @@ def show_stats(stats):
     print(f"Total Environments: {sum(stats['deployments'])}")
     print(f"Median Environments: {median(stats['deployments'])}")
     print('\033[93m*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_**_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*\033[0m')
+    print('\n')
 
     # Language Stats
     print("\033[94mSource Code Lines for each Programming Language:\033[0m")
 
+    print(stats['languages'])
+    print()
     for lang, lines_list in stats['languages'].items():
         total_lines = sum(lines_list)
         median_lines = median(lines_list)
-        print('\033[95m------------------------------\033[0m')
+        print('\033[95m--------------------------------------------\033[0m')
         print(f"{lang}: Total Lines - {total_lines}, Median Lines - {median_lines}")
 
-    print('\033[93m*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_**_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*\033[0m')
+    print('\033[93m*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_**_*_*_*_*_*_*_*_*_*\033[0m')
 
-    # # Showing stats in line chart
-    # keys = list(stats.keys())
-    # values = list(stats.values())
-    #
-    # plt.plot(keys, sum(values), marker='o', linestyle='-')
-    #
-    # plt.xlabel('Stats')
-    # plt.ylabel('Values')
-    # plt.title('Statistics for Kaggle repositories')
-    # plt.show()
+    # Showing stats in line charts
+    names=[]
+    for repo in repos:
+        names.append(repo.get('name'))
 
+    # Styling the plots
+    plt.figure(figsize=(10, 6))
+    plt.xlabel('Stats', fontsize=12)
+    plt.ylabel('Values', fontsize=12)
+    plt.title('Statistics for Kaggle repositories', fontsize=14)
+    plt.xticks(rotation=45, ha='right', fontsize=10)
+    plt.yticks(fontsize=10)
+    plt.legend(fontsize=10)
+    plt.grid(True, linestyle='--', alpha=0.7)
+
+    for key in stats.keys():
+        if key != 'languages':
+            keys = list(names)
+            if skip[key]:  # Omitting the skipped languages
+                keys = [x for x in keys if x not in skip[key]]
+            values = list(stats[key])
+            plt.plot(keys, values, marker='o', linestyle='-', color='purple', markersize=8, label='Total Stats')
+            plt.xlabel('Repositories', fontsize=12)
+            plt.ylabel('# ' + key, fontsize=12)
+            plt.title(key + ' for Kaggle repositories', fontsize=14)
+            plt.show()
 
 if __name__ == "__main__":
     GH_username = "Kaggle"
-    GH_token = "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"
+    GH_token = "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"
 
-    GH_stats = Get_GitHub_Repository_statistics(GH_username, GH_token)
+    GH_stats, repos, skip = Get_GitHub_Repository_statistics(GH_username, GH_token)
 
     if GH_stats is not None:
-        show_stats(GH_stats)
+        show_stats(GH_stats, repos, skip)
     else:
         print("Error!!! stats in NONE!")
