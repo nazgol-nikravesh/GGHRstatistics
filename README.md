@@ -42,7 +42,7 @@ statistics of Kaggle repositories:
   - The script iterates through the languages obtained and accumulates the lines of code per language, providing a comprehensive overview of the project's multilingual composition.
 
 ---------------------------------------------------------------------------------------------------------------------------------------
-### 2.show_stats(stats, repos) 
+### 2. show_stats(stats, repos) 
 
 
  **Inputs:**   
