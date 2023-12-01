@@ -7,7 +7,8 @@ GitHub Repo Stats
 This function acts as your personal GitHub investigator, exploring the repositories and collecting their stats. Here's a closer look at how it works:
 
 Inputs:
-username => here is "Kaggle"
+username => here is "Kaggle" 
+  
 token => my Git-Hub toke (Ensure you have a valid GitHub token with the necessary permissions.)
 
 Output:
