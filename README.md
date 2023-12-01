@@ -48,7 +48,7 @@ statistics of Kaggle repositories:
  **Inputs:**   
 - stats => The output of Get_GitHub_Repository_statistics   
 - repos => For using their names in plots  
-- skip => For checking if a repository skipped due to conflic or not
+- skip => For checking if a repository skipped due to an Error or not
 
 
  **Output:**   
