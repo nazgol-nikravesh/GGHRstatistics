@@ -2,7 +2,7 @@
 Getting statistics from all the GitHub repositories of Kaggle
 GitHub Repo Stats
 
-## Functions
+## Functions of main-GGHRS.py
 ### 1. Main function: Get_GitHub_Repository_statistics(username, token)
 This function acts as your personal GitHub investigator, exploring the repositories and collecting their stats. Here's a closer look at how it works:
 
