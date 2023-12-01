@@ -2,7 +2,7 @@
 Getting statistics from all the GitHub repositories of Kaggle
 GitHub Repo Stats
 
-## Functions:
+## Functions
 ### 1. Main function: Get_GitHub_Repository_statistics(username, token)
 This function acts as your personal GitHub investigator, exploring the repositories and collecting their stats. Here's a closer look at how it works:
 
@@ -46,15 +46,29 @@ Fetching:
 
  Inputs:   
 - stats => The output of Get_GitHub_Repository_statistics   
-- repos => my Git-Hub toke (Ensure you have a valid GitHub token with the necessary permissions.)  
+- repos => For using their names in plots  
+- skip => For checking if a repository skipped due to conflic or not
 
 
  Output:   
 printing the statistics of Kaggle repositories:  
 - Total and median number of commits, stars, contributors, branches, tags, forks, releases, closed issues, and environments.   
-- Total and median number of source code lines per programming language used.   
-
+- Total and median number of source code lines per programming language used.    
+ 
 
 Example output:  
  
-![Exampleoutput](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/4503fd12-1f5e-4010-8d1c-852067d85300)
+![Exampleoutput](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/4503fd12-1f5e-4010-8d1c-852067d85300)    
+
+showing plots
+- Showing the number of stats(commits, stars, contributors, branches, tags, forks, releases, closed issues, and environments) per repository in line chart   
+
+
+
+## Dependencies
+- statistics
+- requests
+- matplotlib
+
+
+
