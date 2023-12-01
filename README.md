@@ -1,6 +1,8 @@
 # GGHRstatistics: Get GitHub Repository statistics
 Getting statistics from all the GitHub repositories of Kaggle
-GitHub Repo Stats
+GitHub Repo Stats   
+**note: please use your GitHub Token for => GH_token = "your_actual_github_token_here"**
+
 
 ## Functions of main-GGHRS.py
 ### 1. Main function: Get_GitHub_Repository_statistics(username, token)
@@ -76,7 +78,9 @@ printing the statistics of Kaggle repositories:
 
 --------------------------------------
 
- **note: run main-GGHRS.py to get the outputs.**  
+**note: run main-GGHRS.py to get the outputs.**  
+**note: please use your GitHub Token for => GH_token = "your_actual_github_token_here"**
+
 
 
 ## Dependencies (Python libraries)
