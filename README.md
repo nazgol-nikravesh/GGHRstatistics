@@ -1,3 +1,57 @@
-# GGHRstatistics
+# GGHRstatistics: Get GitHub Repository statistics
 Getting statistics from all the GitHub repositories of Kaggle
 GitHub Repo Stats
+
+## Functions:
+### 1. Main function: Get_GitHub_Repository_statistics(username, token)
+ This function acts as your personal GitHub investigator, exploring the repositories and collecting their stats. Here's a closer look at how it works:
+ Inputs:
+        username => here is "Kaggle"
+        token => my Git-Hub toke (Ensure you have a valid GitHub token with the necessary permissions.)
+ Output:
+       statistics of Kaggle repositories:
+           - Number of commits, stars, contributors, branches, tags, forks, releases, closed issues, and environments per repository.
+           - Number of source code lines per programming language used per repository.
+
+
+Key Components:
+- requests.get(url, headers=headers): This function sends an HTTP GET request to the specified URL. In our script, it's used to fetch information from GitHub's API.
+-.raise_for_status(): After making a request, this method checks if the request was successful. If there's an issue (like a 404 or 500 error), it raises an HTTPError, which is caught in the try-except block.
+- .json(): This method converts the response content (usually in JSON format) into a Python dictionary, making it easy to work with in our script.
+- try-except Block: This is a way to handle errors. If an error occurs during the execution of the code inside the try block, it jumps to the except block, preventing the script from crashing.
+                 * Error Types:
+                   requests.exceptions.HTTPError: Raised if the HTTP request returns an unsuccessful status code (e.g., 404 Not Found, 500 Internal Server Error). The script prints an error message and continues.
+                   requests.exceptions.ConnectionError: Raised if there's a problem connecting to the server. The script prints an error message and continues.
+                   requests.exceptions.Timeout: Raised if the request times out. The script prints an error message and continues.
+                   requests.exceptions.RequestException: A general exception that catches any other unexpected errors. The script prints an error message and continues.
+
+
+Fetching:
+- Fetching stars:
+  The number of stars a repository has is obtained by accessing the 'stargazers_count' property in the repository information obtained from the /repos/{username}/{repo_name} endpoint.
+- Fetching commits, contributors, branches, tags, forks, releases, closed issues, and deployements:
+  The script retrieves deployments for a repository using the /repos/{username}/{repo_name}/deployments endpoint. It then extracts unique environments from deployments to count the number of deployments, providing insights into how the repository is deployed in different environments.
+- Fetching environments:
+  The number of environments a repository has is determined by counting the unique environments from deployments. Based on my search, there is no way to fetch the number of environments directly without deployments.
+  *note: There are no environments available for Kaggle's GitHub repositories.
+- Fetching programming languages code lines:
+  The /repos/{username}/{repo_name}/languages endpoint is employed to gather language statistics for a specific repository.
+  The response from this endpoint contains data on the lines of code written in each programming language present in the repository.
+  The script iterates through the languages obtained and accumulates the lines of code per language, providing a comprehensive overview of the project's multilingual composition.
+
+
+### 2.show_stats(stats, repos)
+ Inputs:
+        stats => The output of Get_GitHub_Repository_statistics
+        repos => my Git-Hub toke (Ensure you have a valid GitHub token with the necessary permissions.)
+ Output:
+       printing the statistics of Kaggle repositories:
+           - Total and median number of commits, stars, contributors, branches, tags, forks, releases, closed issues, and environments.
+           - Total and median number of source code lines per programming language used.
+Example output:
+![Exampleoutput](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/4503fd12-1f5e-4010-8d1c-852067d85300)
+
+
+
+- Total and median number of commits, stars, contributors, branches, tags, forks, releases, closed issues, and environments.
+- Total and median number of source code lines per programming language used.
