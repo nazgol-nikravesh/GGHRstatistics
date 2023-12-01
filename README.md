@@ -8,7 +8,7 @@ This function acts as your personal GitHub investigator, exploring the repositor
 
 **Inputs:**  
 - username => here is "Kaggle"   
-- token => my Git-Hub toke (Ensure you have a valid GitHub token with the necessary permissions.)   
+- token => my Git-Hub token (It is needed to have a valid GitHub token with the necessary permissions.)   
 
 **Output:**
 
