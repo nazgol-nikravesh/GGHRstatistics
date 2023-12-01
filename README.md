@@ -21,10 +21,10 @@ Key Components:
 - .json(): This method converts the response content (usually in JSON format) into a Python dictionary, making it easy to work with in our script.
 - try-except Block: This is a way to handle errors. If an error occurs during the execution of the code inside the try block, it jumps to the except block, preventing the script from crashing.
 * Error Types:   
-                   requests.exceptions.HTTPError: Raised if the HTTP request returns an unsuccessful status code (e.g., 404 Not Found, 500 Internal Server Error). The script prints an error message and continues.  
-                   requests.exceptions.ConnectionError: Raised if there's a problem connecting to the server. The script prints an error message and continues.   
-                   requests.exceptions.Timeout: Raised if the request times out. The script prints an error message and continues.    
-                   requests.exceptions.RequestException: A general exception that catches any other unexpected errors. The script prints an error message and continues.
+                  - requests.exceptions.HTTPError: Raised if the HTTP request returns an unsuccessful status code (e.g., 404 Not Found, 500 Internal Server Error). The script prints an error message and continues.  
+                  - requests.exceptions.ConnectionError: Raised if there's a problem connecting to the server. The script prints an error message and continues.   
+                  - requests.exceptions.Timeout: Raised if the request times out. The script prints an error message and continues.    
+                  - requests.exceptions.RequestException: A general exception that catches any other unexpected errors. The script prints an error message and continues.
 
 
 Fetching:
@@ -35,24 +35,28 @@ Fetching:
 - Fetching environments:
   The number of environments a repository has is determined by counting the unique environments from deployments. Based on my search, there is no way to fetch the number of environments directly without deployments.
   *note: There are no environments available for Kaggle's GitHub repositories.
-- Fetching programming languages code lines:
-  The /repos/{username}/{repo_name}/languages endpoint is employed to gather language statistics for a specific repository.
-  The response from this endpoint contains data on the lines of code written in each programming language present in the repository.
-  The script iterates through the languages obtained and accumulates the lines of code per language, providing a comprehensive overview of the project's multilingual composition.
+- Fetching programming languages code lines:    
+  - The /repos/{username}/{repo_name}/languages endpoint is employed to gather language statistics for a specific repository.   
+  - The response from this endpoint contains data on the lines of code written in each programming language present in the repository.    
+  - The script iterates through the languages obtained and accumulates the lines of code per language, providing a comprehensive overview of the project's multilingual composition.
 
 
-### 2.show_stats(stats, repos)
- Inputs:
-        stats => The output of Get_GitHub_Repository_statistics
-        repos => my Git-Hub toke (Ensure you have a valid GitHub token with the necessary permissions.)
- Output:
-       printing the statistics of Kaggle repositories:
-           - Total and median number of commits, stars, contributors, branches, tags, forks, releases, closed issues, and environments.
-           - Total and median number of source code lines per programming language used.
-Example output:
+### 2.show_stats(stats, repos) 
+
+
+ Inputs:  
+       - stats => The output of Get_GitHub_Repository_statistics  
+       - repos => my Git-Hub toke (Ensure you have a valid GitHub token with the necessary permissions.)  
+
+
+ Output:  
+        printing the statistics of Kaggle repositories:   
+           - Total and median number of commits, stars, contributors, branches, tags, forks, releases, closed issues, and environments.   
+           - Total and median number of source code lines per programming language used.   
+
+
+Example output:  
+ 
 ![Exampleoutput](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/4503fd12-1f5e-4010-8d1c-852067d85300)
 
 
-
-- Total and median number of commits, stars, contributors, branches, tags, forks, releases, closed issues, and environments.
-- Total and median number of source code lines per programming language used.
