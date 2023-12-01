@@ -65,13 +65,14 @@ printing the statistics of Kaggle repositories:
 - Showing the number of stats(commits, stars, contributors, branches, tags, forks, releases, closed issues, and environments) per repository in line chart   
 
 ![commits](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/b25fc31d-c078-498e-b5c0-6b3e9d87383c)
-[closed_issues](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/9160c1ed-089e-42bc-b00a-4fbf29933a7f)
 ![branches](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/888451da-9b41-4b76-be6d-0b46e4190ba5)
 ![tags](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/ebf077b9-f920-4752-82a7-d253e0329c8c)
 ![stars](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/1f3839a2-5f05-4d40-82bf-a36f8609bc61)
 ![releases](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/b98666d2-661e-45f4-8408-9ca370249642)
 ![forks](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/ce9da7c9-4e0e-4c7f-864f-068a65d468a0)
 ![deployments](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/1cd96380-6a05-4a90-819a-e93c254717c9)
+![closed_issues](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/602c0af0-850e-428c-b9ac-1e2830aea86c)
+![contributers](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/211b5f57-024f-4a74-810f-6c25449c1dff)
 
 
 ## Dependencies
