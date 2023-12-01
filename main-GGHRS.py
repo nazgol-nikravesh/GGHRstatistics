@@ -220,7 +220,7 @@ def show_stats(stats,repos,skip):
 
 if __name__ == "__main__":
     GH_username = "Kaggle"
-    GH_token = "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"
+    GH_token = "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"
 
     GH_stats, repos, skip = Get_GitHub_Repository_statistics(GH_username, GH_token)
 
