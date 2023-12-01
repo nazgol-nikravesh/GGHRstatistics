@@ -75,7 +75,7 @@ printing the statistics of Kaggle repositories:
 ![contributers](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/211b5f57-024f-4a74-810f-6c25449c1dff)
 
 
-## Dependencies
+## Dependencies(Python libraries)
 - statistics
 - requests
 - matplotlib
