@@ -44,19 +44,17 @@ Fetching:
 ### 2.show_stats(stats, repos) 
 
 
- Inputs:  
-       - stats => The output of Get_GitHub_Repository_statistics  
-       - repos => my Git-Hub toke (Ensure you have a valid GitHub token with the necessary permissions.)  
+ Inputs:   
+- stats => The output of Get_GitHub_Repository_statistics   
+- repos => my Git-Hub toke (Ensure you have a valid GitHub token with the necessary permissions.)  
 
 
- Output:  
-        printing the statistics of Kaggle repositories:   
-           - Total and median number of commits, stars, contributors, branches, tags, forks, releases, closed issues, and environments.   
-           - Total and median number of source code lines per programming language used.   
+ Output:   
+printing the statistics of Kaggle repositories:  
+- Total and median number of commits, stars, contributors, branches, tags, forks, releases, closed issues, and environments.   
+- Total and median number of source code lines per programming language used.   
 
 
 Example output:  
  
 ![Exampleoutput](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/4503fd12-1f5e-4010-8d1c-852067d85300)
-
-
