@@ -195,15 +195,7 @@ def show_stats(stats,repos,skip):
     for repo in repos:
         names.append(repo.get('name'))
 
-    # Styling the plots
-    plt.figure(figsize=(10, 6))
-    plt.xlabel('Stats', fontsize=12)
-    plt.ylabel('Values', fontsize=12)
-    plt.title('Statistics for Kaggle repositories', fontsize=14)
-    plt.xticks(rotation=45, ha='right', fontsize=10)
-    plt.yticks(fontsize=10)
-    plt.legend(fontsize=10)
-    plt.grid(True, linestyle='--', alpha=0.7)
+
 
     for key in stats.keys():
         if key != 'languages':
@@ -211,7 +203,16 @@ def show_stats(stats,repos,skip):
             if skip[key]:  # Omitting the skipped languages
                 keys = [x for x in keys if x not in skip[key]]
             values = list(stats[key])
+            # Styling the plots
+            plt.figure(figsize=(10, 6))
+            plt.xlabel('Stats', fontsize=12)
+            plt.ylabel('Values', fontsize=12)
+            plt.title('Statistics for Kaggle repositories', fontsize=14)
+            plt.xticks(rotation=45, ha='right', fontsize=10)
+            plt.yticks(fontsize=10)
+            plt.grid(True, linestyle='--', alpha=0.7)
             plt.plot(keys, values, marker='o', linestyle='-', color='purple', markersize=8, label='Total Stats')
+            plt.legend(fontsize=10)
             plt.xlabel('Repositories', fontsize=12)
             plt.ylabel('# ' + key, fontsize=12)
             plt.title(key + ' for Kaggle repositories', fontsize=14)
@@ -219,7 +220,7 @@ def show_stats(stats,repos,skip):
 
 if __name__ == "__main__":
     GH_username = "Kaggle"
-    GH_token = "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"
+    GH_token = "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"
 
     GH_stats, repos, skip = Get_GitHub_Repository_statistics(GH_username, GH_token)
 
