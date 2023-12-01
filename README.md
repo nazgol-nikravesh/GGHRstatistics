@@ -6,10 +6,9 @@ GitHub Repo Stats
 ### 1. Main function: Get_GitHub_Repository_statistics(username, token)
 This function acts as your personal GitHub investigator, exploring the repositories and collecting their stats. Here's a closer look at how it works:
 
-Inputs:
-      username => here is "Kaggle" 
-   
-      token => my Git-Hub toke (Ensure you have a valid GitHub token with the necessary permissions.)
+Inputs:  
+- username => here is "Kaggle"   
+- token => my Git-Hub toke (Ensure you have a valid GitHub token with the necessary permissions.)   
 
 Output:
 statistics of Kaggle repositories:  
@@ -21,10 +20,10 @@ Key Components:
 -.raise_for_status(): After making a request, this method checks if the request was successful. If there's an issue (like a 404 or 500 error), it raises an HTTPError, which is caught in the try-except block.
 - .json(): This method converts the response content (usually in JSON format) into a Python dictionary, making it easy to work with in our script.
 - try-except Block: This is a way to handle errors. If an error occurs during the execution of the code inside the try block, it jumps to the except block, preventing the script from crashing.
-                 * Error Types:
-                   requests.exceptions.HTTPError: Raised if the HTTP request returns an unsuccessful status code (e.g., 404 Not Found, 500 Internal Server Error). The script prints an error message and continues.
-                   requests.exceptions.ConnectionError: Raised if there's a problem connecting to the server. The script prints an error message and continues.
-                   requests.exceptions.Timeout: Raised if the request times out. The script prints an error message and continues.
+* Error Types:   
+                   requests.exceptions.HTTPError: Raised if the HTTP request returns an unsuccessful status code (e.g., 404 Not Found, 500 Internal Server Error). The script prints an error message and continues.  
+                   requests.exceptions.ConnectionError: Raised if there's a problem connecting to the server. The script prints an error message and continues.   
+                   requests.exceptions.Timeout: Raised if the request times out. The script prints an error message and continues.    
                    requests.exceptions.RequestException: A general exception that catches any other unexpected errors. The script prints an error message and continues.
 
 
