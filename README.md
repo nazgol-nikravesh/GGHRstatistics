@@ -6,9 +6,7 @@ GitHub Repo Stats
 ### 1. Main function: Get_GitHub_Repository_statistics(username, token)
  This function acts as your personal GitHub investigator, exploring the repositories and collecting their stats. Here's a closer look at how it works:
 
-
  Inputs:
-
 
         username => here is "Kaggle"
 
@@ -18,15 +16,11 @@ GitHub Repo Stats
 
  Output:
 
-
        statistics of Kaggle repositories:
-
 
            - Number of commits, stars, contributors, branches, tags, forks, releases, closed issues, and environments per repository.
 
-
            - Number of source code lines per programming language used per repository.
-
 
 Key Components:
 - requests.get(url, headers=headers): This function sends an HTTP GET request to the specified URL. In our script, it's used to fetch information from GitHub's API.
