@@ -62,17 +62,17 @@ printing the statistics of Kaggle repositories:
 ![Exampleoutput](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/4503fd12-1f5e-4010-8d1c-852067d85300)    
 
 **Example Output/ showing plots:**
-- Showing the number of stats(commits, stars, contributors, branches, tags, forks, releases, closed issues, and environments) per repository in line chart   
+- Showing the number of stats(commits, stars, contributors, branches, tags, forks, releases, closed issues, and environments (from deployments)) per repository in line chart   
 
-![commits](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/b25fc31d-c078-498e-b5c0-6b3e9d87383c)
-![branches](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/888451da-9b41-4b76-be6d-0b46e4190ba5)
-![tags](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/ebf077b9-f920-4752-82a7-d253e0329c8c)
-![stars](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/1f3839a2-5f05-4d40-82bf-a36f8609bc61)
-![releases](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/b98666d2-661e-45f4-8408-9ca370249642)
-![forks](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/ce9da7c9-4e0e-4c7f-864f-068a65d468a0)
-![deployments](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/1cd96380-6a05-4a90-819a-e93c254717c9)
-![closed_issues](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/602c0af0-850e-428c-b9ac-1e2830aea86c)
-![contributers](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/211b5f57-024f-4a74-810f-6c25449c1dff)
+![commits](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/d15c4f76-cfa2-4333-9dd3-12625e3e081b)
+![stars](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/9882a7e8-3f5a-4cb9-877a-f634ed558b61)
+![contributers](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/a73f37ee-5d9f-4237-909d-d638c203ddc8)
+![branches](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/f728b0fc-b4a7-4bca-aded-782b36c21187)
+![tags](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/5852d117-c7da-48d6-9e50-e418413166b6)
+![forks](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/4c8bbf6e-2eb3-4c26-81ed-16deb466d871)
+![releases](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/fa53e8da-9655-4e79-a745-9336082f9ac9)
+![closed_issues](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/48cbe06a-6a2e-4153-be3a-fbad91db7033)
+![deployments](https://github.com/nazgol-nikravesh/GGHRstatistics/assets/93579818/99865406-741e-4667-97cd-ac6c0630c362)
 
 --------------------------------------
 
